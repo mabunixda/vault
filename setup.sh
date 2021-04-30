@@ -58,4 +58,4 @@ terraform --version
 echo "=============="
 vault --version
 echo "=============="
-vault status
+echo "now run: vault status"
