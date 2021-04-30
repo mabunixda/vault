@@ -33,6 +33,48 @@ Cluster ID      c9e2f5de-a645-b9ba-5c3a-c0d72df7ebc2
 HA Enabled      false
 ```
 
+## Using the Vault API
+
+Documentation is here: <https://www.vaultproject.io/api-docs/index>
+
+```bash
+$ curl -s --header "X-Vault-Token: ${VAULT_TOKEN}" ${VAULT_ADDR}/v1/sys/license | jq
+{
+  "request_id": "91407972-a1d8-4dca-07a1-534a974c1beb",
+  "lease_id": "",
+  "renewable": false,
+  "lease_duration": 0,
+  "data": {
+    "expiration_time": "2021-04-30T13:28:59.143393726Z",
+    "features": [
+      "HSM",
+      "Performance Replication",
+      "DR Replication",
+      "MFA",
+      "Sentinel",
+      "Seal Wrapping",
+      "Control Groups",
+      "Performance Standby",
+      "Namespaces",
+      "KMIP",
+      "Entropy Augmentation",
+      "Transform Secrets Engine",
+      "Lease Count Quotas",
+      "Key Management Secrets Engine",
+      "Automated Snapshots"
+    ],
+    "license_id": "temporary",
+    "performance_standby_count": 9999,
+    "start_time": "2021-04-30T07:23:59.143393726Z"
+  },
+  "wrap_info": null,
+  "warnings": [
+    "time left on license is 5h57m27s"
+  ],
+  "auth": null
+}
+```
+
 ## Codify Management of Vault
 
 These assets are provided to perform the tasks described in the following tutorials:
